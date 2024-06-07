@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-100">
 
 <head>
   <meta charset="UTF-8">
@@ -8,15 +8,7 @@
   <title>Home Page</title>
 </head>
 
-<body>
-  <!--
-  This example requires updating your template:
-
-  ``` 
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
+<body class="h-full">
   <div class="min-h-full">
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,15 +17,22 @@
             <div class="flex-shrink-0">
               <img class="h-8 w-8" src="https://laracasts.com/images/logo/logo-triangle.svg" alt="Your Company">
             </div>
+
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-                <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                <x-nav-link href="/" :active="request()->is('/')">
+                  Home
+                </x-nav-link>
+                <x-nav-link href="/about" :active="request()->is('about')">
+                  About
+                </x-nav-link>
+                <x-nav-link href="/contact" :active="request()->is('contact')">
+                  Contact
+                </x-nav-link>
               </div>
             </div>
           </div>
+
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
               <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -56,6 +55,7 @@
               </div>
             </div>
           </div>
+
           <div class="-mr-2 flex md:hidden">
             <!-- Mobile menu button -->
             <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
