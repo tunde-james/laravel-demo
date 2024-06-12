@@ -17,13 +17,8 @@ Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
   ->middleware('auth')
   ->can('edit-job', 'jobs');
 
-Route::patch('/jobs/{job}', [JobController::class, 'update'])
-  ->middleware('auth')
-  ->can('edit-job', 'jobs');
-
-Route::delete('/jobs/{job}', [JobController::class, 'destroy'])
-  ->middleware('auth')
-  ->can('edit', 'jobs');
+Route::patch('/jobs/{job}', [JobController::class, 'update']);
+Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
 
 // Auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
